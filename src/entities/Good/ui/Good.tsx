@@ -17,15 +17,15 @@ export const Good = (props: IGoodProps) => {
     src,
     price,
     lastPrice,
-    extra,
+    // extra,
     createdAt,
-    updatedAt,
+    // updatedAt,
     width = 380,
     height = 285,
   } = props;
 
   const weekTime = 7 * 24 * 60 * 60 * 1000;
-  const isUpdated = updatedAt && (new Date().getTime() - updatedAt.getTime() < weekTime);
+  // const isUpdated = updatedAt && (new Date().getTime() - updatedAt.getTime() < weekTime);
   const isNewBadge = new Date().getTime() - createdAt.getTime() < weekTime;
   const isDiscount = lastPrice && (lastPrice > price);
 
