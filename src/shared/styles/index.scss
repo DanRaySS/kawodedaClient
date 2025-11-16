@@ -1,0 +1,9 @@
+@use "reset.scss" as *;
+@use "variables/global.scss" as *;
+@use "themes/light.scss" as *;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

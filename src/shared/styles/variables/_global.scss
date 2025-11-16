@@ -1,0 +1,42 @@
+:root {
+  //Fonts
+  --font-family-inter: 'Inter', Arial, sans-serif;
+
+  --font-bold-size: 1.4rem; 
+  --font-bold-weight: 700;
+  --font-bold-line-height: 1.75rem;
+  --font-bold: var(--font-bold-weight) var(--font-bold-size)/var(--font-bold-line-height) var(--font-family-inter);
+
+  --font-regular-size: 1.25rem;
+  --font-regular-weight: 200;
+  --font-regular-line-height: 1.5rem;
+  --font-regular: var(--font-regular-weight) var(--font-regular-size)/var(--font-regular-line-height) var(--font-family-inter);
+
+  --font-semi-bold-size: 1rem; 
+  --font-semi-bold-weight: 600;
+  --font-semi-bold-line-height: 1.25rem;
+  --font-semi-bold: var(--font-semi-bold-weight) var(--font-semi-bold-size)/var(--font-semi-bold-line-height) var(--font-family-inter);
+
+  --font-smaller-size: 1rem;
+  --font-smaller-weight: 400;
+  --font-smaller-line-height: 1.1875rem;
+  --font-smaller: var(--font-smaller-weight) var(--font-smaller-size)/var(--font-smaller-line-height) var(--font-family-inter);
+
+  --font-small-size: 0.75rem;
+  --font-small-weight: 400;
+  --font-small-line-height: 0.875rem;
+  --font-small: var(--font-small-weight) var(--font-small-size)/var(--font-small-line-height) var(--font-family-inter);
+  
+  --font-smallest-size: 9px;
+  --font-smallest-weight: 400;
+  --font-smallest-line-height: 12px;
+  --font-smallest: var(--font-smallest-weight) var(--font-smallest-size)/var(--font-smallest-line-height) var(--font-family-inter);
+
+  --z-index-background: 0;
+  --z-index-good: 1;
+  --z-index-banner-image: 1;
+  --z-index-good-new-badge: 2;
+  --z-index-header: 3;
+  --z-index-modal: 4;
+
+}

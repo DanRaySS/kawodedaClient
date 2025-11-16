@@ -1,0 +1,149 @@
+.Goods {
+  position: relative;
+  width: 100%;
+  background: var(--secondary-color-4);
+  padding: 75px 50px 100px 50px;
+
+  // @media () {
+    
+  // }
+
+  &__container {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 90px;
+    width: 100%;
+    //С отступом в 10px
+    max-width: 770px;
+
+    @media (max-width: 1500px) {
+      margin-top: 100px;
+    }
+
+    @media (max-width: 1200px) {
+      margin-top: 300px;
+    }
+
+    @media (max-width: 900px) {
+      margin-top: 180px;
+    }
+
+    @media (max-width: 700px) {
+      margin-top: 140px;
+    }
+
+    @media (max-width: 550px) {
+      margin-top: 120px;
+    }
+
+    @media (max-width: 500px) {
+      margin-top: 100px;
+    }
+
+    @media (max-width: 450px) {
+      margin-top: 80px;
+    }
+
+    @media (max-width: 400px) {
+      margin-top: 60px;
+    }
+
+    @media (max-width: 380px) {
+      margin-top: 40px;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &::before {
+    width: 500px;
+    height: 500px;
+    top: 0px;
+    left: 0;
+    background-image: url('/object1.png');
+    z-index: var(--z-index-background);
+
+    @media (max-width: 1500px) {
+      width: 400px;
+      height: 400px;
+      top: -60px;
+    }
+
+    @media (max-width: 900px) {
+      width: 300px;
+      height: 300px;
+      top: -60px;
+    }
+
+    @media (max-width: 700px) {
+      width: 250px;
+      height: 250px;
+    }
+
+    @media (max-width: 550px) {
+      width: 220px;
+      height: 220px;
+    }
+
+    @media (max-width: 450px) {
+      width: 180px;
+      height: 180px;
+    }
+
+    @media (max-width: 380px) {
+      width: 155px;
+      height: 155px;
+    }
+  }
+
+  &::after {
+    width: 500px;
+    height: 410px;
+    top: 60px;
+    right: 0;
+    background-image: url('/object2.png');
+    z-index: var(--z-index-background);
+
+    @media (max-width: 1500px) {
+      width: 400px;
+      height: 300px;
+      top: 0px;
+    }
+
+    @media (max-width: 900px) {
+      width: 350px;
+      height: 240px;
+      top: 0;
+    }
+
+    @media (max-width: 700px) {
+      width: 250px;
+      height: 190px;
+    }
+
+    @media (max-width: 550px) {
+      width: 190px;
+      height: 150px;
+    }
+
+    @media (max-width: 450px) {
+      width: 150px;
+      height: 110px;
+    }
+
+    @media (max-width: 380px) {
+      width: 130px;
+      height: 90px;
+    }
+  }
+}

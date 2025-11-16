@@ -1,0 +1,75 @@
+.Header {
+  font: var(--font-regular);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 10px 12px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-index-header);
+  background-color: var(--secondary-color-1);
+  color: var(--accent-color-2);
+
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  @media (max-width: 1400px) {
+    font: var(--font-smaller);
+  }
+}
+
+.SocialList {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
+
+.ExtraList {
+  display: flex;
+  align-items: center;
+}
+
+.List {
+  list-style: none;
+
+  &__item {
+    cursor: pointer;
+  }
+}
+
+.ShoppingCart {
+  position: relative;
+}
+
+.ValueOfBoughtItems {
+  position: absolute;
+  display: flex;
+  top: -2px;
+  left: -2px;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 99999px;
+  background: red;
+  color: white;
+  font: var(--font-small);
+
+  @media (max-width: 500px) {
+    width: 16px;
+    height: 16px;
+    font: var(--font-smallest);
+  }
+}

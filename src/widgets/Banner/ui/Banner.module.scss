@@ -1,0 +1,41 @@
+.Banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 20px;
+  padding-top: 140px;
+  background-color: var(--secondary-color-1);
+  position: relative;
+
+  @media (max-width: 700px) {
+    padding-top: 100px;
+  }
+
+  @media (max-width: 500px) {
+    padding-top: 80px;
+  }
+
+  &__img {
+    z-index: var(--z-index-banner-image);
+
+    @media (max-width: 1200px) {
+      width: 800px;
+      height: 180px;
+    }
+
+    @media (max-width: 900px) {
+      width: 600px;
+      height: 150px;
+    }
+    
+    @media (max-width: 700px) {
+      width: 400px;
+      height: 120px;
+    }
+
+    @media (max-width: 500px) {
+      width: 300px;
+      height: 100px;
+    }
+  }
+}
