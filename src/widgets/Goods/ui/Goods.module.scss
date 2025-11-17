@@ -4,9 +4,9 @@
   background: var(--secondary-color-4);
   padding: 75px 50px 100px 50px;
 
-  // @media () {
-    
-  // }
+  @media (max-width: 380px) {
+    padding-top: 0;
+  }
 
   &__container {
     display: flex;
@@ -101,8 +101,9 @@
     }
 
     @media (max-width: 380px) {
-      width: 155px;
-      height: 155px;
+      top: -77px;
+      width: 70px;
+      height: 70px;
     }
   }
 
@@ -142,8 +143,9 @@
     }
 
     @media (max-width: 380px) {
-      width: 130px;
-      height: 90px;
+      top: -60px;
+      width: 70px;
+      height: 50px;
     }
   }
 }

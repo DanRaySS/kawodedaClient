@@ -11,7 +11,7 @@ interface IBannerProps {
 export const Banner = ({ className, backgroundColor, padding }: IBannerProps) => {
   return (
     <div className={classNames(cls.Banner, {}, [className])} style={{backgroundColor, padding}}>
-      <Image src="/kawodeda.svg" alt="Название" width={1079} height={211} className={cls.Banner__img} priority/>
+      <Image src="/kawodeda.svg" alt="Каводеда Баннер" width={1079} height={211} className={cls.Banner__img} priority/>
     </div>
   );
 };
