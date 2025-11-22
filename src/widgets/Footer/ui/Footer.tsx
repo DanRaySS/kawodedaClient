@@ -1,5 +1,3 @@
-'use client';
-
 import classNames from "classnames";
 import cls from './Footer.module.scss';
 import Image from "next/image";

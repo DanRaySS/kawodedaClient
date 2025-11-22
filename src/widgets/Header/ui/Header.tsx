@@ -1,8 +1,7 @@
-"use client";
-
 import classNames from "classnames";
 import Image from "next/image";
 import cls from "./Header.module.scss";
+import Link from "next/link";
 
 interface IHeaderProps {
   className?: string;
@@ -15,12 +14,10 @@ export const Header = ({ className }: IHeaderProps) => {
 
   return (
     <header className={classNames(cls.Header, {}, [className])}>
-      <div className={cls.LogoWrapper}>
-        <a href="." rel="noopener" className={cls.Link}>
+      <Link className={cls.LogoWrapper} href={"/"}>
           {/* Kawodeda */}
-          <Image src={"/title.png"} alt={"Лого"} fill priority />
-        </a>
-      </div>
+          <Image src={"/title.png"} alt={"Каводеда Лого"} fill priority />
+      </Link>
       <ul role="list" className={classNames(cls.Header__list, cls.List, cls.SocialList)}>
         <li className={classNames(cls.List__item, cls.Youtube)}>
           <a href="https://www.youtube.com/@KawoDeda" target="_blank" rel="noopener" className={cls.Link}>
@@ -43,7 +40,9 @@ export const Header = ({ className }: IHeaderProps) => {
           <Image src="/account.svg" alt="Аккаунт" fill priority />
         </li>
         <li className={classNames(cls.List__item, cls.Info)}>
+          <Link href={'/information'}>
           <Image src={"/info.svg"} alt="Информация" fill priority />
+          </Link>
         </li>
         <li className={classNames(cls.List__item, cls.ShoppingCart)}>
           {valueOfBoughtItems ? <div className={cls.ShoppingCartWrapper}>

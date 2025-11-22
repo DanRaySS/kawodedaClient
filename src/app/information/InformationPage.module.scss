@@ -1,0 +1,36 @@
+.InformationPage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-color-3);
+
+  &__container {
+    padding: 20px 20px 20px;
+    padding-top: 70px;
+    color: var(--accent-color-2);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    height: 144px;
+    color: var(--accent-color-2);
+  }
+
+  &__title {
+    font: var(--font-title);
+    color: var(--accent-color-2);
+    text-transform: uppercase;
+  }
+
+  &__content {
+    padding-bottom: 80px;
+  }
+}
+
+.Dropdown,
+.Divider {
+  width: 100%;
+}

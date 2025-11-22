@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import type { Metadata } from "next";
+import 'shared/styles/index.scss';
 
 export const metadata: Metadata = {
   title: 'Kawodeda',

@@ -1,0 +1,30 @@
+.Dropdown {
+
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 85px;
+    cursor: pointer;
+  }
+
+  &__title {
+    color: var(--accent-color-2);
+    font: var(--font-regular);
+    text-transform: uppercase;
+  }
+
+  &__sign {
+    position: absolute;
+    right: 0px;
+    font-weight: bold;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    font: var(--font-smaller);
+    color: var(--secondary-color-2);
+    padding: 20px 0 40px 0;
+  }
+}

@@ -1,5 +1,3 @@
-'use client';
-
 import classNames from "classnames";
 import { Good, IGood } from "entities/Good";
 import cls from "./Goods.module.scss";
