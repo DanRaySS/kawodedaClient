@@ -1,19 +1,10 @@
-import classNames from "classnames";
 import cls from "./ProductPage.module.scss";
 import Image from "next/image";
 import { Sizes } from "widgets/Sizes/Sizes";
+import { Params } from "./layout";
 
-interface IProductPageProps {
-  className?: string;
-  params: { id: string; };
-}
 
-export default async function ProductPage(props: IProductPageProps) {
-  const {
-    params,
-    className
-  } = props;
-
+export default async function ProductPage({params}: {params: Params}) {
   // const product = await fetch(`https://api.example.com/products/${params.id}`)
   // .then(res => res.json());
 
@@ -22,7 +13,7 @@ export default async function ProductPage(props: IProductPageProps) {
   const price = 1490;
 
   return (
-    <div className={classNames(cls.ProductPage, {}, [className])}>
+    <div className={cls.ProductPage}>
       <div className={cls.ProductPage__container}>
         <div className={cls.ProductPage__photos}>
           {/* {photos.map((photo) => <Image key={photo.id} src={photo.src} alt={photo.alt} width={330} height={190} />)} */}
