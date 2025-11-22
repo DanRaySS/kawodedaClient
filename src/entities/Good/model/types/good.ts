@@ -1,4 +1,5 @@
 export interface IGood {
+  id: number;
   title: string;
   alt: string | null;
   src: string;

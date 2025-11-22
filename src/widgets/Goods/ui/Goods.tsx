@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { Good, IGood } from "entities/Good";
 import cls from "./Goods.module.scss";
+import Link from "next/link";
 
 interface IGoodsProps {
   className?: string;
@@ -10,6 +11,7 @@ export const Goods = ({ className }: IGoodsProps) => {
 
   const goods: IGood[] = [
     {
+      id: 124124,
       title: 'Футболка Absurd NSX',
       alt: 'Футболка Absurd NSX',
       price: 3349,
@@ -31,6 +33,7 @@ export const Goods = ({ className }: IGoodsProps) => {
       updatedAt: null,
     },
     {
+      id: 344,
       title: 'Футболка Absurd Shit Happens',
       alt: 'Футболка Absurd Shit Happens',
       price: 3649,
@@ -56,6 +59,7 @@ export const Goods = ({ className }: IGoodsProps) => {
       updatedAt: new Date("2025-08-22"),
     },
     {
+      id: 2,
       title: 'ФУТБОЛКА ABSURD My live my rules',
       alt: 'ФУТБОЛКА ABSURD My live my rules',
       price: 3329,
@@ -85,6 +89,7 @@ export const Goods = ({ className }: IGoodsProps) => {
       updatedAt: new Date("2025-09-22"),
     },
     {
+      id: 1,
       title: 'Худи LOGO ABSURD DRIVE',
       alt: 'Худи LOGO ABSURD DRIVE',
       price: 6990,
@@ -112,11 +117,15 @@ export const Goods = ({ className }: IGoodsProps) => {
     <div className={classNames(cls.Goods, {}, [className])}>
       <div className={cls.Goods__container}>
         {goods.sort(((a, b) => b.createdAt.getTime() - a.createdAt.getTime())).map((good: IGood) => (
-          <Good
-            key={good.src}
-            
-            {...good}
-          />
+          <Link
+            key={good.id}
+            href={`/products/${good.id}`}
+          >
+            <Good
+
+              {...good}
+            />
+          </Link>
         ))}
       </div>
     </div>
