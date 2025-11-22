@@ -5,8 +5,6 @@ import cls from "./Good.module.scss";
 
 interface IGoodProps extends IGood {
   className?: string;
-  width?: number;
-  height?: number;
 }
 
 export const Good = (props: IGoodProps) => {
@@ -20,8 +18,6 @@ export const Good = (props: IGoodProps) => {
     // extra,
     createdAt,
     // updatedAt,
-    width = 380,
-    height = 285,
   } = props;
 
   const weekTime = 7 * 24 * 60 * 60 * 1000;
@@ -35,8 +31,8 @@ export const Good = (props: IGoodProps) => {
         <Image
           src={src}
           alt={alt!}
-          width={width}
-          height={height}
+          fill
+          priority
         />
       </div>
       <h2 className={cls.Good__title}>{title}</h2>

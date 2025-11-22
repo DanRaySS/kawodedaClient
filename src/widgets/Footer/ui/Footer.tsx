@@ -2,7 +2,6 @@
 
 import classNames from "classnames";
 import cls from './Footer.module.scss';
-import { useWindowWidth } from "shared/hooks/useWindowWidth";
 import Image from "next/image";
 
 interface IFooterProps {
@@ -14,8 +13,6 @@ export const Footer = (props: IFooterProps) => {
     className
   } = props;
 
-  const width = useWindowWidth();
-
   return (
     <footer className={classNames(cls.Footer, {}, [className])}>
       <div className={cls.Footer__container}>
@@ -26,13 +23,12 @@ export const Footer = (props: IFooterProps) => {
               target="_blank"
               rel="noopener"
               className={classNames(cls.Link, cls.Youtube)}>
-              {width > 500
-                ? "Youtube"
-                : <Image src={"/yt.svg"}
-                  alt="Youtube"
-                  width={width > 400 ? 40 : 30}
-                  height={width > 400 ? 40 : 30}
-                />}
+              <Image
+                src={"/yt.svg"}
+                alt="Youtube"
+                fill
+                priority
+              />
             </a>
           </li>
           <li className={cls.List__item}>
@@ -41,13 +37,12 @@ export const Footer = (props: IFooterProps) => {
               target="_blank"
               rel="noopener"
               className={classNames(cls.Link, cls.Telegram)}>
-              {width > 500
-                ? "Telegram"
-                : <Image
-                  src={"/tg.svg"}
-                  alt="Telegram"
-                  width={width > 400 ? 40 : 30}
-                  height={width > 400 ? 40 : 30} />}
+              <Image
+                src={"/tg.svg"}
+                alt="Telegram"
+                fill
+                priority
+              />
             </a>
           </li>
           <li className={cls.List__item}>
@@ -56,14 +51,12 @@ export const Footer = (props: IFooterProps) => {
               target="_blank"
               rel="noopener"
               className={classNames(cls.Link, cls.VK)}>
-              {width > 500
-                ? "ВКОНТАКТЕ"
-                : <Image
-                  src={"/vk.svg"}
-                  alt="ВКОНТАКТЕ"
-                  width={width > 400 ? 40 : 30}
-                  height={width > 400 ? 40 : 30}
-                />}
+              <Image
+                src={"/vk.svg"}
+                alt="ВКОНТАКТЕ"
+                fill
+                priority
+              />
             </a>
           </li>
         </ul>

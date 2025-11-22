@@ -3,15 +3,12 @@
 import classNames from "classnames";
 import { Good, IGood } from "entities/Good";
 import cls from "./Goods.module.scss";
-import { useWindowWidth } from "shared/hooks/useWindowWidth";
 
 interface IGoodsProps {
   className?: string;
 }
 
 export const Goods = ({ className }: IGoodsProps) => {
-
-  const width = useWindowWidth();
 
   const goods: IGood[] = [
     {
@@ -119,8 +116,7 @@ export const Goods = ({ className }: IGoodsProps) => {
         {goods.sort(((a, b) => b.createdAt.getTime() - a.createdAt.getTime())).map((good: IGood) => (
           <Good
             key={good.src}
-            width={width > 900 ? 380 : width > 700 ? 270 : width > 600 ? 220 : width > 450 ? 380 : width > 380 ? 320 : 280}
-            height={width > 900 ? 285 : width > 700 ? 200 : width > 600 ? 150 : width > 450 ? 285 : width > 380 ? 220 : 180}
+            
             {...good}
           />
         ))}
