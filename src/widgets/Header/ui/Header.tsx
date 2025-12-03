@@ -14,10 +14,6 @@ export const Header = ({ className }: IHeaderProps) => {
 
   return (
     <header className={classNames(cls.Header, {}, [className])}>
-      <Link className={cls.LogoWrapper} href={"/"}>
-          {/* Kawodeda */}
-          <Image src={"/title.png"} alt={"Каводеда Лого"} fill priority />
-      </Link>
       <ul role="list" className={classNames(cls.Header__list, cls.List, cls.SocialList)}>
         <li className={classNames(cls.List__item, cls.Youtube)}>
           <a href="https://www.youtube.com/@KawoDeda" target="_blank" rel="noopener" className={cls.Link}>

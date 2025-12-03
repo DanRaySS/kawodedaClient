@@ -4,8 +4,21 @@
   background: var(--secondary-color-4);
   padding: 75px 50px 100px 50px;
 
-  @media (max-width: 700px) {
-    padding-top: 0;
+  @media (max-width: 1200px) {
+    padding-top: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-top: 30px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 10px;
+    padding-bottom: 100px;
+  }
+
+  @media (max-width: 380px) {
+    padding-bottom: 60px;
   }
 
   &__container {
@@ -20,26 +33,12 @@
     //С отступом в 10px
     max-width: 770px;
 
-    @media (max-width: 1500px) {
-      margin-top: 100px;
-    }
-
-    @media (max-width: 1200px) {
-      margin-top: 300px;
-    }
-
-    @media (max-width: 900px) {
-      margin-top: 180px;
-    }
-
-    @media (max-width: 700px) {
-      margin-top: 0px;
-      padding-top: 0px;
-
+    @media (max-width: 500px) {
+      row-gap: 80px;
     }
 
     @media (max-width: 380px) {
-      padding-top: 40px;
+      row-gap: 40px;
     }
   }
 
@@ -52,76 +51,92 @@
   }
 
   &::before {
-    width: 500px;
-    height: 500px;
-    top: 0px;
-    left: 0;
+    width: 240px;
+    height: 240px;
+    top: -200px;
+    left: 20px;
     background-image: url('/object1.png');
     z-index: var(--z-index-background);
 
     @media (max-width: 1500px) {
-      width: 400px;
-      height: 400px;
-      top: -60px;
+      width: 200px;
+      height: 200px;
+      top: -190px;
+    }
+
+    @media (max-width: 1200px) {
+      width: 160px;
+      height: 160px;
+      top: -180px;
     }
 
     @media (max-width: 900px) {
-      width: 300px;
-      height: 300px;
-      top: -60px;
+      width: 120px;
+      height: 120px;
+      top: -168px;
     }
 
     @media (max-width: 700px) {
-      top: -150px;
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
+      top: -120px;
     }
 
-    @media (max-width: 450px) {
-      top: -135px;
+    @media (max-width: 550px) {
       width: 50px;
       height: 50px;
+      top: -105px;
     }
 
     @media (max-width: 380px) {
-      top: -67px;
+      width: 35px;
+      height: 35px;
+      top: -63px;
     }
   }
 
   &::after {
-    width: 500px;
-    height: 410px;
-    top: 60px;
+    width: 280px;
+    height: 200px;
+    top: -180px;
     right: 0;
     background-image: url('/object2.png');
     z-index: var(--z-index-background);
 
     @media (max-width: 1500px) {
-      width: 400px;
-      height: 300px;
-      top: 0px;
+      width: 240px;
+      height: 160px;
+      top: -160px;
+    }
+
+    @media (max-width: 1200px) {
+      width: 180px;
+      height: 120px;
+      top: -150px;
     }
 
     @media (max-width: 900px) {
-      width: 350px;
-      height: 240px;
-      top: 0;
+      width: 130px;
+      height: 90px;
+      top: -140px;
     }
 
     @media (max-width: 700px) {
-      top: -130px;
-      width: 50px;
-      height: 40px;
+      width: 90px;
+      height: 60px;
+      top: -100px;
     }
 
-    @media (max-width: 450px) {
-      top: -120px;
-      width: 40px;
+    @media (max-width: 550px) {
+      width: 60px;
       height: 35px;
+      top: -90px;
     }
 
     @media (max-width: 380px) {
-      top: -49px;
+      width: 50px;
+      height: 25px;
+      top: -53px;
     }
   }
 }

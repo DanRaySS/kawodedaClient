@@ -5,13 +5,12 @@ import cls from "./Banner.module.scss";
 interface IBannerProps {
   className?: string;
   backgroundColor?: string;
-  padding?: number;
 }
 
-export const Banner = ({ className, backgroundColor, padding }: IBannerProps) => {
+export const Banner = ({ className, backgroundColor }: IBannerProps) => {
   return (
-    <div className={classNames(cls.Banner, {}, [className])} style={{backgroundColor, padding}}>
-      <Image src="/kawodeda.svg" alt="Каводеда" width={1079} height={211} className={cls.Banner__img} priority/>
+    <div className={classNames(cls.Banner, {}, [className])} style={{backgroundColor}}>
+      <Image src="/kawodeda.svg" alt="Каводеда" width={800} height={180} className={cls.Banner__img} priority/>
     </div>
   );
 };
