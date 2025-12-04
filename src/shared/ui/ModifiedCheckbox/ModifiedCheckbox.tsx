@@ -13,14 +13,16 @@ interface IModifiedCheckboxProps {
   onChange?: (checked: boolean) => void;
 }
 
-export const ModifiedCheckbox = ({
-  className,
-  children,
-  checked,
-  defaultChecked = false,
-  disabled = false,
-  onChange,
-}: IModifiedCheckboxProps) => {
+export const ModifiedCheckbox = (props: IModifiedCheckboxProps) => {
+  const {
+    className,
+    children,
+    checked,
+    defaultChecked = false,
+    disabled = false,
+    onChange,
+  } = props;
+  
   const isControlled = checked !== undefined;
   const [internalChecked, setInternalChecked] = useState(defaultChecked);
 

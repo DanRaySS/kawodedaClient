@@ -1,0 +1,26 @@
+.Button {
+  font: var(--font-regular);
+  text-transform: uppercase;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 70px;
+  border: 1px solid var(--accent-color-2);
+  color: #000;
+  background: var(--accent-color-2);
+
+  @media (max-width: 1440px) {
+    height: 60px;
+  }
+
+  @media (max-width: 1200px) {
+    font: var(--font-smaller);
+    height: 50px;
+  }
+
+  @media (max-width: 1100px) {
+    font: var(--font-smaller);
+    height: 45px;
+  }
+}

@@ -4,8 +4,13 @@
 
   --font-title-size: 1.75rem; 
   --font-title-weight: 400;
-  --font-title-line-height: 42px;
+  --font-title-line-height: 2.625rem;
   --font-title: var(--font-title-weight) var(--font-title-size)/var(--font-title-line-height) var(--font-family-inter);
+
+  --font-title-smaller-size: 1.4rem; 
+  --font-title-smaller-weight: 400;
+  --font-title-smaller-line-height: 2rem;
+  --font-title-smaller: var(--font-title-smaller-weight) var(--font-title-smaller-size)/var(--font-title-smaller-line-height) var(--font-family-inter);
 
   --font-bold-size: 1.4rem; 
   --font-bold-weight: 700;
