@@ -3,6 +3,7 @@
 import classNames from "classnames";
 import cls from "./ModifiedCheckbox.module.scss";
 import { useState } from "react";
+import { SizesType } from "entities/Good/model/types/good";
 
 interface IModifiedCheckboxProps {
   className?: string;
@@ -10,7 +11,8 @@ interface IModifiedCheckboxProps {
   checked?: boolean;
   defaultChecked?: boolean;
   disabled?: boolean;
-  onChange?: (checked: boolean) => void;
+  content: SizesType;
+  onChange?: (content: SizesType) => void;
 }
 
 export const ModifiedCheckbox = (props: IModifiedCheckboxProps) => {
@@ -20,6 +22,7 @@ export const ModifiedCheckbox = (props: IModifiedCheckboxProps) => {
     checked,
     defaultChecked = false,
     disabled = false,
+    content,
     onChange,
   } = props;
   
@@ -37,7 +40,7 @@ export const ModifiedCheckbox = (props: IModifiedCheckboxProps) => {
       setInternalChecked(newState);
     }
 
-    onChange?.(newState);
+    onChange?.(content);
   };
 
   return (

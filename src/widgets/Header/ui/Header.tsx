@@ -1,19 +1,29 @@
+'use client';
+
 import classNames from "classnames";
 import Image from "next/image";
 import cls from "./Header.module.scss";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useCartStore } from "app/store/cart";
 
 interface IHeaderProps {
   className?: string;
+  isProduct?: boolean;
 }
 
-export const Header = ({ className }: IHeaderProps) => {
-  const getValueOfBoughtItems = 1000;
+export const Header = ({ className, isProduct = false }: IHeaderProps) => {
+  const router = useRouter();
 
-  const valueOfBoughtItems = getValueOfBoughtItems >= 1000 ? "10>" : getValueOfBoughtItems;
+  const products = useCartStore((cart) => cart.items);
+
+  console.log(products);
+
+  const valueOfBoughtItems = products?.length >= 1000 ? "10>" : products?.length;
 
   return (
     <header className={classNames(cls.Header, {}, [className])}>
+      {isProduct && <div style={{paddingLeft: 30}}><button type="button" onClick={() => router.back()}>Назад</button></div>}
       <ul role="list" className={classNames(cls.Header__list, cls.List, cls.SocialList)}>
         <li className={classNames(cls.List__item, cls.Youtube)}>
           <a href="https://www.youtube.com/@KawoDeda" target="_blank" rel="noopener" className={cls.Link}>

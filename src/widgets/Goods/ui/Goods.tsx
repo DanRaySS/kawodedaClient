@@ -31,6 +31,7 @@ export const Goods = ({ className }: IGoodsProps) => {
       extra: {},
       createdAt: new Date("2025-08-21"),
       updatedAt: null,
+      qty: 141441,
     },
     {
       id: 344,
@@ -57,6 +58,7 @@ export const Goods = ({ className }: IGoodsProps) => {
       extra: {},
       createdAt: new Date("2025-08-21"),
       updatedAt: new Date("2025-08-22"),
+      qty: 123123,
     },
     {
       id: 2,
@@ -87,6 +89,7 @@ export const Goods = ({ className }: IGoodsProps) => {
       extra: {},
       createdAt: new Date("2025-08-01"),
       updatedAt: new Date("2025-09-22"),
+      qty: 12414114,
     },
     {
       id: 1,
@@ -109,6 +112,7 @@ export const Goods = ({ className }: IGoodsProps) => {
       extra: {},
       createdAt: new Date("2025-11-15"),
       updatedAt: null,
+      qty: 12414124,
     },
   ];
 

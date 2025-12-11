@@ -2,8 +2,7 @@ import cls from "./ProductPage.module.scss";
 import Image from "next/image";
 import { Sizes } from "widgets/Sizes/Sizes";
 import { Params } from "./layout";
-import { Button } from "shared/ui/Button/Button";
-
+import { AddToCart } from "widgets/AddToCart/AddToCart";
 
 export default async function ProductPage({params}: {params: Params}) {
   // const product = await fetch(`https://api.example.com/products/${params.id}`)
@@ -31,7 +30,7 @@ export default async function ProductPage({params}: {params: Params}) {
           </header>
           <span className={cls.ProductPage__price}>{`${price.toLocaleString('ru-RU')} р.`}</span>
           <Sizes className={cls.Sizes} />
-          <Button className={cls.Button} type="button">В корзину</Button>
+          <AddToCart className={cls.Button} />
           <div className={cls.ProductPage__description}>
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti sint odit voluptatum minus animi ex enim cum, ratione explicabo impedit soluta at eligendi et ipsa repellat ut. Aspernatur, ut fugiat.</span>
             <br />

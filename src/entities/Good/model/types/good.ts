@@ -6,6 +6,11 @@ export interface IGood {
   price: number;
   lastPrice: number | null;
   historyPrices: IHistoryPrices[];
+  sizesWithQty?: {
+    size: SizesType;
+    qty: number;
+  }[];
+  qty: number;
   extra: unknown;
   createdAt: Date;
   updatedAt: Date | null;
@@ -18,3 +23,11 @@ interface IHistoryPrices {
     price: number;
   }[];
 }
+
+export const Sizes = {
+  M: 'M',
+  L: 'L',
+  XL: 'XL',
+} as const;
+
+export type SizesType = keyof typeof Sizes;
