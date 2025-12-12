@@ -1,0 +1,177 @@
+// widgets/Gallery/ui/Gallery.module.scss
+.Gallery {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 670px;
+  max-height: 550px;
+  margin-right: 60px;
+  gap: 10px;
+  pointer-events: auto;
+
+  @media (max-width: 1200px) {
+    margin-right: 30px;
+  }
+
+  @media (max-width: 1030px) {
+    flex: 1 1 90%;
+    min-height: auto;
+    max-height: none;
+    margin-right: 0;
+  }
+
+  &__img {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: var(--secondary-color-1);
+    border-radius: 8px;
+
+    &_main {
+      @media (max-width: 1030px) {
+        height: 500px;
+      }
+
+      @media (max-width: 768px) {
+        height: 400px;
+      }
+
+      @media (max-width: 480px) {
+        height: 300px;
+      }
+    }
+  }
+
+  &__mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  &__navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    opacity: 0;
+    pointer-events: none;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .Gallery__img_main:hover & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &_prev {
+      left: 15px;
+    }
+
+    &_next {
+      right: 15px;
+    }
+
+    @media (max-width: 768px) {
+      opacity: 1;
+      pointer-events: auto;
+      width: 35px;
+      height: 35px;
+      font-size: 18px;
+    }
+
+    @media (max-width: 480px) {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+  }
+
+  &__indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+
+  &__indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 0;
+
+    &_active {
+      background: white;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &__thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  &__thumbnail {
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    &_active {
+      border-color: var(--accent-color-1);
+      opacity: 1;
+    }
+
+    @media (max-width: 1030px) {
+      width: 60px;
+      height: 60px;
+    }
+
+    @media (max-width: 480px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__thumbnailImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
