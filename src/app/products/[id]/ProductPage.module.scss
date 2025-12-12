@@ -18,6 +18,18 @@
       padding: 40px;
       padding-top: 80px;
     }
+
+    @media (max-width: 1030px) {
+      flex-direction: column;
+      padding: 40px;
+      padding-top: 80px;
+    }
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      padding: 20px;
+      padding-top: 80px;
+    }
   }
 
   &__content {
