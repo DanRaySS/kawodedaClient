@@ -122,7 +122,7 @@ export const Goods = ({ className }: IGoodsProps) => {
       <div className={cls.Goods__container}>
         {goods.sort(((a, b) => b.createdAt.getTime() - a.createdAt.getTime())).map((good: IGood) => (
           <Link
-            key={good.id}
+            key={`product-${good.id}`}
             href={`/products/${good.id}`}
           >
             <Good

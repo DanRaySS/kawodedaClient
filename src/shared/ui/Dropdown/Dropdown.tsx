@@ -13,6 +13,10 @@ interface IDropdownProps {
 
 export const Dropdown = ({ className, title, children, headerHeight }: IDropdownProps) => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
+  
+  const mods = {
+    flex: isVisible,
+  }
 
   return (
     <div className={classNames(cls.Dropdown, {}, [className])}>
@@ -27,8 +31,7 @@ export const Dropdown = ({ className, title, children, headerHeight }: IDropdown
         <div className={cls.Dropdown__sign}>{isVisible ? "˄" : "˅"}</div>
       </header>
       <div
-        className={cls.Dropdown__content}
-        style={{ display: isVisible ? 'none' : 'block' }}
+        className={classNames(cls.Dropdown__content, mods)}
       >
         <div>{children}</div>
       </div>

@@ -6,6 +6,12 @@ interface CartState {
   items: IGood[];
   selectedItem: IGood | null;
 
+  isCartOpen: boolean;
+
+  openCart: () => void;
+  closeCart: () => void;
+  toggleCart: () => void;
+
   select: (good: IGood) => void;
   unselect: () => void;
 
@@ -20,11 +26,18 @@ interface CartState {
   getTotalCount: () => number;
 }
 
+
 export const useCartStore = create<CartState>()(
   persist(
     (set, get) => ({
       items: [],
       selectedItem: null,
+      isCartOpen: false,
+
+      openCart: () => set({ isCartOpen: true }),
+      closeCart: () => set({ isCartOpen: false }),
+      toggleCart: () => set((s) => ({ isCartOpen: !s.isCartOpen })),
+
 
       select: (good) => set({ selectedItem: good }),
 
@@ -32,13 +45,25 @@ export const useCartStore = create<CartState>()(
 
       add: (good) =>
         set((state) => {
-          if (state.selectedItem) {
+          const existingItem = state.items.find(
+            (item) => item.id === good.id
+          );
+
+          if (existingItem) {
             return {
-              items: [...state.items, { ...good, qty: 1 }],
+              items: state.items.map((item) =>
+                item.id === good.id
+                  ? { ...item, qty: item.qty + 1 }
+                  : item
+              ),
             };
           }
-          return {};
+
+          return {
+            items: [...state.items, { ...good, qty: 1 }],
+          };
         }),
+
 
       remove: (id) =>
         set((state) => ({

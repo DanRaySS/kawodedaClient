@@ -20,7 +20,7 @@ export const Sizes = ({ className }: ISizesProps) => {
   const product: IGood = {
     id: 12312312,
     title: 'Товар какой-то',
-    src: 'src/src/src',
+    src: '/test2.png',
     price: 5000,
     alt: 'Какой-то товар',
     lastPrice: 4500,

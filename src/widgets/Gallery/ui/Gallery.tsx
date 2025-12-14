@@ -126,7 +126,7 @@ export const Gallery = ({ className }: GalleryProps) => {
       <div className={cls.Gallery__thumbnails}>
         {images.map((image, index) => (
           <button
-            key={image.id}
+            key={`gallery-${image.id}`}
             className={`${cls.Gallery__thumbnail} ${index === currentIndex ? cls.Gallery__thumbnail_active : ''}`}
             onClick={() => handleThumbnailClick(index)}
             aria-label={`View image ${index + 1}`}

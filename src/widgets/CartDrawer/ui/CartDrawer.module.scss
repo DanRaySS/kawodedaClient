@@ -1,0 +1,130 @@
+.Backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 90;
+}
+
+.Drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100vh;
+  background: var(--secondary-color-1);
+  color: var(--accent-color-2);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+/* открыто */
+.Drawer.open {
+  transform: translateX(0);
+}
+
+@media (max-width: 1024px) {
+  .Drawer {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Drawer {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+.Title {
+  font: var(--font-bold);
+  margin-bottom: 20px;
+}
+
+.Items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.Item {
+  display: grid;
+  grid-template-columns: 70px 1fr auto auto auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.Name {
+  font: var(--font-smaller);
+  display: flex;
+}
+
+.Qty {
+  font: var(--font-small);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  button {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.Price {
+  display: flex;
+  font: var(--font-small);
+}
+
+.Remove {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.Footer {
+  margin-top: 20px;
+}
+
+.Pay {
+  width: 100% !important;
+}
+
+.Close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--accent-color-2);
+  line-height: 1;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .Drawer {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Drawer {
+    width: 100%;
+    padding: 16px;
+  }
+}

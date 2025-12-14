@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import type { Metadata } from "next";
 import 'shared/styles/index.scss';
+import { CartDrawer } from "widgets/CartDrawer";
 
 export const metadata: Metadata = {
   title: 'Kawodeda',
@@ -18,6 +19,7 @@ export default function RootLayout({
         className={classNames('app', 'app-light-theme')}
       >
         {children}
+        <CartDrawer />
       </body>
     </html>
   );

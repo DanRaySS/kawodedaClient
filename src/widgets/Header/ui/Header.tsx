@@ -3,27 +3,26 @@
 import classNames from "classnames";
 import Image from "next/image";
 import cls from "./Header.module.scss";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useCartStore } from "app/store/cart";
+import Link from 'next/link';
+import { calculateTotalQty } from "../helpers/calculateTotalQty";
 
 interface IHeaderProps {
   className?: string;
-  isProduct?: boolean;
+  isVisibleBackBtn?: boolean;
 }
 
-export const Header = ({ className, isProduct = false }: IHeaderProps) => {
-  const router = useRouter();
-
+export const Header = ({ className, isVisibleBackBtn = false }: IHeaderProps) => {
   const products = useCartStore((cart) => cart.items);
+  const toggleCart = useCartStore((s) => s.toggleCart);
 
-  console.log(products);
+  const totalQty = calculateTotalQty(products);
 
-  const valueOfBoughtItems = products?.length >= 1000 ? "10>" : products?.length;
+  const valueOfBoughtItems = totalQty >= 1000 ? "10>" : totalQty;
 
   return (
     <header className={classNames(cls.Header, {}, [className])}>
-      {isProduct && <div style={{paddingLeft: 30}}><button type="button" onClick={() => router.back()}>Назад</button></div>}
+      {isVisibleBackBtn && <div style={{ paddingLeft: 30 }}><Link href="/"><button type="button" className={cls.ButtonBack}>Назад</button></Link></div>}
       <ul role="list" className={classNames(cls.Header__list, cls.List, cls.SocialList)}>
         <li className={classNames(cls.List__item, cls.Youtube)}>
           <a href="https://www.youtube.com/@KawoDeda" target="_blank" rel="noopener" className={cls.Link}>
@@ -43,14 +42,14 @@ export const Header = ({ className, isProduct = false }: IHeaderProps) => {
       </ul>
       <ul role="list" className={classNames(cls.Header__list, cls.List, cls.ExtraList)}>
         <li className={classNames(cls.List__item, cls.Account)}>
-          <Image src="/account.svg" alt="Аккаунт" fill priority />
+          <Link href='/account'><Image src="/account.svg" alt="Аккаунт" fill priority /></Link>
         </li>
         <li className={classNames(cls.List__item, cls.Info)}>
           <Link href={'/information'}>
-          <Image src={"/info.svg"} alt="Информация" fill priority />
+            <Image src={"/info.svg"} alt="Информация" fill priority />
           </Link>
         </li>
-        <li className={classNames(cls.List__item, cls.ShoppingCart)}>
+        <li className={classNames(cls.List__item, cls.ShoppingCart)} onClick={toggleCart}>
           {valueOfBoughtItems ? <div className={cls.ShoppingCartWrapper}>
             <span className={cls.ValueOfBoughtItems}>{valueOfBoughtItems}</span>
             <Image src="/shoppingCart.svg" alt="Корзина" fill priority />

@@ -18,7 +18,7 @@ export default async function InformationLayout({ children, params }: { children
 
   return (
     <>
-      <Header isProduct/>
+      <Header isVisibleBackBtn />
       {children}
       <Footer />
     </>

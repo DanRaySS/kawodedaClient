@@ -1,0 +1,41 @@
+.AccountPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-color-3);
+
+  &__container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 300px;
+    padding-bottom: 300px;
+    color: var(--accent-color-2);
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__field {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font: var(--font-regular);
+    cursor: default;
+        margin-bottom: 40px;
+  }
+
+  &__input {
+    display: flex;
+    padding-left: 10px;
+    text-decoration: underline !important;
+    width: 100%;
+  }
+}
